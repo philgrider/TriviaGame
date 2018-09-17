@@ -1,8 +1,7 @@
 .backgroundImage{
     background-image: url("../images/Riddle Background.jpg");
-    background-repeat: no-repeat;
-    background-size: unset;
-    background-repeat: repeat-x;
+    background-repeat:no-repeat;
+    background-size:100%;
 }
 #question-box{
     background-image: url("../images/question background.png");
