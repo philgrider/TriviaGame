@@ -145,23 +145,23 @@ var checkAnswers = function (answerChoice) {
     $('.form-check-input').attr('disabled',true);
 
     if (answerChoice === 4) {
-        $imageContainer.attr('class','d-flex justify-content-center visible');
         $imageHolder.attr('src','./assets/images/Oops.gif');
+        $imageContainer.attr('class','d-flex justify-content-center visible');
         gameObject.notAnswered += 1;
         $('#time-remaining').text('Sorry you did not answer! The correct answer was ' + gameObject.questions[gameObject.currentQuestion].answers[gameObject.questions[gameObject.currentQuestion].correctAnswer]);
     //    console.log('Correct'+gameObject.correct,'Incorrect'+ gameObject.incorrect,'Not Answered' + gameObject.notAnswered);
 
     } else if (answerChoice === gameObject.questions[gameObject.currentQuestion].correctAnswer) {
         gameObject.correct += 1;
-        $imageContainer.attr('class','d-flex justify-content-center visible');
         $imageHolder.attr('src','./assets/images/applause.gif_c200');
+        $imageContainer.attr('class','d-flex justify-content-center visible');
         // console.log('Correct'+gameObject.correct,'Incorrect'+ gameObject.incorrect,'Not Answered' + gameObject.notAnswered);
         $('#time-remaining').text('Correct! Great Job!');
 
     } else if(answerChoice !== gameObject.questions[gameObject.currentQuestion].correctAnswer){
         gameObject.incorrect += 1;
-        $imageContainer.attr('class','d-flex justify-content-center visible');
         $imageHolder.attr('src','./assets/images/sorry.gif');
+        $imageContainer.attr('class','d-flex justify-content-center visible');
         // console.log('Correct'+gameObject.correct,'Incorrect'+ gameObject.incorrect,'Not Answered' + gameObject.notAnswered);
         $('#time-remaining').text('Incorrect! The correct answer was ' + gameObject.questions[gameObject.currentQuestion].answers[gameObject.questions[gameObject.currentQuestion].correctAnswer]);
 
@@ -246,8 +246,8 @@ var buildGame = function () {
     })
 }
 var gameFinished = function () {
-    $imageContainer.attr('class','d-flex justify-content-center visible');
     $imageHolder.attr('src','./assets/images/applause.gif_c200');
+    $imageContainer.attr('class','d-flex justify-content-center visible');
     $gameContainer.empty();
     var $pContainer = $('<p>');
     $pContainer.attr('class', 'h1 text-light text-center');
