@@ -1,12 +1,16 @@
 .backgroundImage{
-    background-image: url("../images/Riddle Background.jpeg");
+    background-image: url("../images/Riddle Background.jpg");
+    background-repeat: no-repeat;
+   /* background-size: 100%,100%; */
 }
 #question-box{
     background-image: url("../images/question background.png");
     background-repeat: no-repeat;
     background-size: 100%,100%;
     background-attachment: local;
-    margin-top: 160px;
     height: 500px;
     
+}
+.img-size{
+    height: 200px;
 }
