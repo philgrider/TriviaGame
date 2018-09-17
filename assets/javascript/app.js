@@ -99,6 +99,7 @@ var gameObject = {
     incorrect: 0,
     notAnswered: 0,
     timerCountDown: 30,
+    timerCount: '',
     currentQuestion: 0,
 
     timer: function () {
@@ -110,7 +111,6 @@ var gameObject = {
     }
 }
 var $gameContainer = $('#question-box');
-var timerCount;
 var $imageContainer = $('#image-div');
 var $imageHolder = $('#image')
 var gameStart = function () {
@@ -168,11 +168,11 @@ var checkAnswers = function (answerChoice) {
     }
     gameObject.currentQuestion += 1;
     if (gameObject.currentQuestion === 10) {
-        clearInterval(timerCount);
+        clearInterval(gameObject.timerCount);
         setTimeout(gameFinished, 3000);
     }
     else {
-        clearInterval(timerCount);
+        clearInterval(gameObject.timerCount);
         setTimeout(buildGame, 3000);
     }
 
@@ -181,8 +181,8 @@ var buildGame = function () {
     $imageContainer.attr('class','d-flex justify-content-center invisible');
     //Start Timer
     gameObject.timerCountDown = 30;
-    timerCount = setInterval(gameObject.timer, 1000),
-        $gameContainer.empty();
+    gameObject.timerCount = setInterval(gameObject.timer, 1000);
+    $gameContainer.empty();
 
     var $pHeaderContainer = $('<p>');
     // Header
