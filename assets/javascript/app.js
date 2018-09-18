@@ -1,6 +1,9 @@
 // remember to add function ready at the end//
 // Handler for .ready() called.
 
+var $gameContainer = $('#question-box');
+var $imageContainer = $('#image-div');
+var $imageHolder = $('#image');
 var gameObject = {
     questions: [
         {
@@ -282,9 +285,6 @@ var gameObject = {
     });
 }
 };
-var $gameContainer = $('#question-box');
-var $imageContainer = $('#image-div');
-var $imageHolder = $('#image');
     gameObject.gameStart();
 
 
