@@ -133,7 +133,7 @@ var gameObject = {
         notAnswered = 0;
         gameObject.buildGame();
 
-    })
+    });
 },
     checkAnswers : function (answerChoice) {
     //console.log('Current Question: ' + gameObject.currentQuestion);
@@ -219,7 +219,6 @@ var gameObject = {
             id: idValue,
             name: 'exampleRadios',
             'class': 'form-check-input',
-            id: 'radio-check',
             value: i
         });
         $answerButtonDiv.append($answerButtonInput);
@@ -238,7 +237,7 @@ var gameObject = {
     var $radioBtn = $('.form-check-input');
     $radioBtn.change(function () {
         gameObject.checkAnswers($(this).val());
-    })
+    });
 },
     gameFinished : function () {
     $imageHolder.attr('src','./assets/images/applause.gif_c200');
@@ -248,19 +247,19 @@ var gameObject = {
     $pContainer.attr('class', 'h1 text-light text-center');
     $pContainer.text('Riddle Me This?');
     $gameContainer.append($pContainer);
-    var $pContainer = $('<p>');
+    $pContainer = $('<p>');
     $pContainer.attr('class', 'h2 text-light text-center');
     $pContainer.text('You Finished the Game!');
     $gameContainer.append($pContainer);
-    var $pCorrectAnswers = $('<p>');
+    $pCorrectAnswers = $('<p>');
     $pCorrectAnswers.attr('class', 'h3 text-light text-center');
     $pCorrectAnswers.text('Correctly Answered: ' + gameObject.correct);
     $gameContainer.append($pCorrectAnswers);
-    var $pInCorrectAnswers = $('<p>');
+    $pInCorrectAnswers = $('<p>');
     $pInCorrectAnswers.attr('class', 'h3 text-light text-center');
     $pInCorrectAnswers.text('Incorrectly Answered: ' + gameObject.incorrect);
     $gameContainer.append($pInCorrectAnswers);
-    var $pUnanswered = $('<p>');
+    $pUnanswered = $('<p>');
     $pUnanswered.attr('class', 'h3 text-light text-center');
     $pUnanswered.text('Not Answered: ' + gameObject.notAnswered);
     $gameContainer.append($pUnanswered);
@@ -280,14 +279,13 @@ var gameObject = {
         gameObject.notAnswered = 0;
         gameObject.currentQuestion = 0;
         gameObject.buildGame();
-    })
+    });
 }
-}
+};
 var $gameContainer = $('#question-box');
 var $imageContainer = $('#image-div');
 var $imageHolder = $('#image');
     gameObject.gameStart();
-
 
 
 
