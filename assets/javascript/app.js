@@ -98,7 +98,7 @@ var gameObject = {
     correct: 0,
     incorrect: 0,
     notAnswered: 0,
-    timerCountDown: 30,
+    timerCountDown: 15,
     timerCount: '',
     currentQuestion: 0,
     timer: function () {
@@ -175,7 +175,7 @@ var gameObject = {
     buildGame  : function () {
     $imageContainer.attr('class','d-flex justify-content-center invisible');
     //Start Timer
-    gameObject.timerCountDown = 30;
+    gameObject.timerCountDown = 15;
     gameObject.timerCount = setInterval(gameObject.timer, 1000);
     $gameContainer.empty();
 
