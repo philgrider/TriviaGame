@@ -101,19 +101,14 @@ var gameObject = {
     timerCountDown: 30,
     timerCount: '',
     currentQuestion: 0,
-
     timer: function () {
         gameObject.timerCountDown -= 1;
         $('#time-remaining').text('Time Remaining: ' + gameObject.timerCountDown + ' Seconds');
         if (gameObject.timerCountDown === 0) {
-            checkAnswers(4);
+            gameObject.checkAnswers(4);
         }
-    }
-}
-var $gameContainer = $('#question-box');
-var $imageContainer = $('#image-div');
-var $imageHolder = $('#image')
-var gameStart = function () {
+    },
+    gameStart : function () {
     // Build the Start Button Page//
 
     $gameContainer.empty();
@@ -136,12 +131,12 @@ var gameStart = function () {
         correct = 0;
         incorrect = 0;
         notAnswered = 0;
-        buildGame();
+        gameObject.buildGame();
 
     })
-}
-var checkAnswers = function (answerChoice) {
-    console.log('Current Question: ' + gameObject.currentQuestion);
+},
+    checkAnswers : function (answerChoice) {
+    //console.log('Current Question: ' + gameObject.currentQuestion);
     $('.form-check-input').attr('disabled',true);
 
     if (answerChoice === 4) {
@@ -169,15 +164,15 @@ var checkAnswers = function (answerChoice) {
     gameObject.currentQuestion += 1;
     if (gameObject.currentQuestion === 10) {
         clearInterval(gameObject.timerCount);
-        setTimeout(gameFinished, 3000);
+        setTimeout(gameObject.gameFinished, 3000);
     }
     else {
         clearInterval(gameObject.timerCount);
-        setTimeout(buildGame, 3000);
+        setTimeout(gameObject.buildGame, 3000);
     }
 
-}
-var buildGame = function () {
+},
+    buildGame  : function () {
     $imageContainer.attr('class','d-flex justify-content-center invisible');
     //Start Timer
     gameObject.timerCountDown = 30;
@@ -242,10 +237,10 @@ var buildGame = function () {
     //Wait for an answer
     var $radioBtn = $('.form-check-input');
     $radioBtn.change(function () {
-        checkAnswers($(this).val());
+        gameObject.checkAnswers($(this).val());
     })
-}
-var gameFinished = function () {
+},
+    gameFinished : function () {
     $imageHolder.attr('src','./assets/images/applause.gif_c200');
     $imageContainer.attr('class','d-flex justify-content-center visible');
     $gameContainer.empty();
@@ -284,7 +279,16 @@ var gameFinished = function () {
         gameObject.incorrect = 0;
         gameObject.notAnswered = 0;
         gameObject.currentQuestion = 0;
-        buildGame();
+        gameObject.buildGame();
     })
 }
-gameStart();
+}
+$gameContainer = $('#question-box');
+$imageContainer = $('#image-div');
+$imageHolder = $('#image');
+gameObject.gameStart();
+
+
+
+
+
