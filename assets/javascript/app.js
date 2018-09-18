@@ -283,10 +283,10 @@ var gameObject = {
     })
 }
 }
-$gameContainer = $('#question-box');
-$imageContainer = $('#image-div');
-$imageHolder = $('#image');
-gameObject.gameStart();
+var $gameContainer = $('#question-box');
+var $imageContainer = $('#image-div');
+var $imageHolder = $('#image');
+    gameObject.gameStart();
 
 
 
