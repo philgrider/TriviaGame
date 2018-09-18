@@ -1,6 +1,8 @@
 // remember to add function ready at the end//
 // Handler for .ready() called.
 
+$( document ).ready(function() {
+    // Handler for .ready() called.
 var $gameContainer = $('#question-box');
 var $imageContainer = $('#image-div');
 var $imageHolder = $('#image');
@@ -286,7 +288,7 @@ var gameObject = {
 }
 };
     gameObject.gameStart();
-
+});
 
 
 
